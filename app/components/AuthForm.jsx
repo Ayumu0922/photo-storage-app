@@ -51,7 +51,7 @@ const AuthForm = () => {
   return (
     <form
       onSubmit={isNewUser ? handleSignUp : handleLogin}
-      className="flex flex-col bg-white/70 rounded-lg p-8 shadow-lg backdrop-blur-sm space-y-4 glassBackgroundColor "
+      className="flex flex-col bg-white rounded-lg p-8 shadow-lg backdrop-blur-sm space-y-4 glassBackgroundColor "
     >
       <input
         type="email"
