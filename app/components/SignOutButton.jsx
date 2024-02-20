@@ -5,9 +5,9 @@ const SignOutButton = () => {
     <form action="/auth/signout" method="post">
       <button
         type="submit"
-        className=" bg-teal-600 text-white font-bold py-2 px-4 rounded hover:bg-teal-500"
+        className=" bg-teal-600 text-white font-bold py-2 px-4 rounded hover:bg-teal-500 flex items-center justify-center"
       >
-        Sign Out
+        サインアウト
       </button>
     </form>
   );

@@ -1,8 +1,8 @@
 "use client";
 import React, { useState } from "react";
-import PulseLoader from "react-spinners/PulseLoader";
 import { supabase } from "../utils/supabaseClient";
 import { useRouter } from "next/navigation";
+import { ClipLoader } from "react-spinners";
 
 const AuthForm = () => {
   const router = useRouter();
@@ -41,7 +41,7 @@ const AuthForm = () => {
 
   let signInMessage = "ログイン";
   if (isSigningIn) {
-    signInMessage = <PulseLoader color="#5bd0f0" size={10} />;
+    signInMessage = <ClipLoader color="#36d7b7" size={25} />;
   } else if (isNewUser) {
     signInMessage = "登録";
   }
@@ -51,25 +51,26 @@ const AuthForm = () => {
   return (
     <form
       onSubmit={isNewUser ? handleSignUp : handleLogin}
-      className="flex flex-col bg-white rounded-lg p-8 shadow-lg backdrop-blur-sm space-y-4 glassBackgroundColor "
+      className="flex flex-col bg-white rounded-lg p-8 shadow-lg backdrop-blur-sm space-y-4 glassBackgroundColor items-center "
     >
       <input
         type="email"
         value={email}
         onChange={(e) => setEmail(e.target.value)}
         placeholder="メールアドレス"
-        className="px-4 py-2 border-2 border-gray-300 rounded-md focus:outline-none focus:border-blue-500 "
+        className="px-4 py-2 border-2 border-gray-300 rounded-md focus:outline-none focus:border-blue-500 w-full "
       />
       <input
         type="password"
         value={password}
         onChange={(e) => setPassword(e.target.value)}
         placeholder="パスワード"
-        className="px-4 py-2 border-2 border-gray-300 rounded-md focus:outline-none focus:border-blue-500"
+        className="px-4 py-2 border-2 border-gray-300 rounded-md focus:outline-none focus:border-blue-500 w-full"
       />
       <button
         type="submit"
-        className="bg-blue-600 text-white px-4 py-2 rounded-md hover:bg-blue-700 transition-colors"
+        className="bg-blue-600 text-white px-4 py-2 rounded-md hover:bg-blue-700 transition-colors flex justify-center items-center"
+        style={{ width: "120px", height: "40px" }} // ボタンの幅と高さを固定
       >
         {signInMessage}
       </button>
