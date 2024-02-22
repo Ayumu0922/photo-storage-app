@@ -17,7 +17,7 @@ export default function Photos() {
         />
       </div>
       {/* 黒の透明レイヤー */}
-      <div className="absolute min-w-full min-h-full bg-black opacity-50"></div>
+      <div className="absolute min-w-full min-h-full bg-black opacity-80"></div>
       <div className="absolute min-w-full min-h-full backdrop-blur-sm"></div>
 
       {/* コンテンツコンテナ */}
